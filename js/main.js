@@ -1,17 +1,25 @@
 // Swiper Slider
-var swiper = new Swiper(".bg-slider-thumbs", {
-    loop: true,
-    spaceBetween: 0,
-    slidesPerView: 0,
-});
 
-var swiper2 = new Swiper(".bg-slider", {
-    loop: true,
-    spaceBetween: 0,
-    thumbs: {
-    swiper: swiper,
-    },
-});
+var swiper = null;
+var swiper2 = null;
+
+window.iniciarSwiper = function () {
+
+    swiper = new Swiper(".bg-slider-thumbs", {
+        loop: true,
+        spaceBetween: 0,
+        slidesPerView: 0,
+    });
+
+    swiper2 = new Swiper(".bg-slider", {
+        loop: true,
+        spaceBetween: 0,
+
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+}
 
 // Navigation bar effects on scroll
 window.addEventListener("scroll", function(){
@@ -643,9 +651,9 @@ function iniciarMapa(){
     const mapa = L.map('mapa').setView([5.73,-73.45],8);
 
     L.tileLayer(
-        'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         {
-            attribution:'© OpenStreetMap © CARTO'
+            attribution: '&copy; OpenStreetMap contributors'
         }
     ).addTo(mapa);
 
@@ -662,7 +670,7 @@ sedes.forEach((sede)=>{
 
                 <p>📞 ${sede.telefono}</p>
 
-                <p>✉ ${sede.correo}</p>
+                <p>✉  ${sede.correo}</p>
 
                 <a
                     class="btn-mapa"

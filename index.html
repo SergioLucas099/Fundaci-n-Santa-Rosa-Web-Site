@@ -28,34 +28,8 @@
                             <i class="uil uil-info-circle"></i> Documentos ESAL
                         </a>
 
-                        <div class="dropdown-content">
-                            <a href="documentos/N°1 2026-06-17 Estados Financieros Fundación SR 2025 VF.pdf" target="_blank">
-                                Estados Financieros 2025
-                            </a>
-                            <a href="documentos/N°2 2019-05-03 ACTA DE CONSTITUCION FUNDACION SANTA ROSA.pdf" target="_blank">
-                                Acta de Constitución
-                            </a>
-                            <a href="documentos/N°3 INFORME DE SOSTENIBILIDAD FSR 2025.pdf" target="_blank">
-                                Informe de Gestión 2025
-                            </a>
-                            <a href="documentos/N°4 2019-05-03 ESTATUTOS FSR.pdf" target="_blank">
-                                Estatutos
-                            </a>
-                            <a href="documentos/N°5 CERTIFICADO DE ANTECEDENTES ART 364-3 V1.pdf" target="_blank">
-                                Certificado de Antecedentes 2025
-                            </a>
-                            <a href="documentos/N°6 ACTA N°24 ASAMBLEA ORDINARIA CONSEJO DE FUNDADORES VF.pdf" target="_blank">
-                                Acta de asamblea
-                            </a>
-                            <a href="documentos/N°7 CERTIFICADO CUMPLIENTO ARTICULO 356-2 E.T. V1.pdf" target="_blank">
-                                Certificado de Cumplimiento
-                            </a>
-                            <a href="documentos/N°8 CERTIFICADO DE ANTECEDENTES ART 364-3 V1.pdf" target="_blank">
-                                Certificado de Antecedentes
-                            </a>
-                            <a href="documentos/N°9 CERTIFICADO CUMPLIENTO ARTICULO 356-2 E.T. V1.pdf" target="_blank">
-                                Certificado Art 356
-                            </a>
+                        <div class="dropdown-content" id="listaDocumentos">
+                            
                         </div>
                     </div>
 
@@ -75,103 +49,158 @@
             <a target="_blank" href="https://www.tiktok.com/@fundacionsantarosa?lang=es-419"><i class="uil uil-outline"></i></i></a>
         </div>
         <div class="swiper bg-slider dark-layer">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="images/s1.jpg" alt="Imagen 1">
-                    <div class="text-content">
-                        <h2 class="title">Proyectos sociales para el empoderamiento <span>Estrategia</span></h2>                        
-                    </div>
-                </div>
-                <div class="swiper-slide dark-layer">
-                    <img src="images/s2.png" alt="Imagen 1">
-                    <div class="text-content">
-                        <h2 class="title">Una región próspera, nuestra gran meta <span>Prosperidad</span></h2>
-                    </div>
-                </div>
-                <div class="swiper-slide dark-layer">
-                    <img src="images/s3.jpg" alt="Imagen 1">
-                    <div class="text-content">
-                        <h2 class="title">Por el desarrollo sostenible de Maripí <span>Sostenibilidad</span></h2>
-                    </div>
-                </div>
+            <div class="swiper-wrapper" id="sliderFirebase">
+                                
             </div>
         </div>
 
         <div class="bg-slider-thumbs">
-            <div class="swiper-wrapper thumbs-container">
-                <img src="images/s1.jpg" class="swiper-slide" alt="">
-                <img src="images/s2.png" class="swiper-slide" alt="">
-                <img src="images/s3.jpg" class="swiper-slide" alt="">
+            <div class="swiper-wrapper thumbs-container" id="sliderThumbsFirebase">
+
             </div>
         </div>
     </section>
 
     <section class="about section" id="sobre_nosotros">
-        <h2 class="about-title">Sobre Nosotros</h2>
-        <p class="about-intro">Fundación Santa Rosa es el brazo social de la empresa Esmeraldas Santa Rosa, ubicada en el sector minero de Maripí, municipio del occidente de Boyacá. </p>
-        
-        <div class="about-card">   
-            <div class="about-image">
-                <img src="images/mision.jpg" alt="Img Mision">
-            </div>
-            <div class="about-content">
-                <h2>Misión</h2>
-                <p>
-                    Fomentar el crecimiento sostenible de la comunidad de Maripí, así como de los municipios aledaños, mediante el desarrollo de proyectos sociales que contribuyan al fortalecimiento de las capacidades locales de sus habitantes; a facilitar el diálogo entre la comunidad, el Estado y la empresa; a impulsar la generación de conocimiento y la protección de la cultura; a cimentar empoderamiento y a promover el respeto por los derechos humanos, con el fin de construir una región próspera y en paz.
-                </p>
-            </div>
-        </div>
 
-        <div class="about-card reverse">
+        <h2 class="about-title">
+            Sobre Nosotros
+        </h2>
 
-            <div class="about-image">
-                <img src="images/vision.jpg" alt="">
-            </div>
+        <p class="about-intro" id="aboutIntro">
+            <!-- Firebase cargará la introducción -->
+        </p>
 
-            <div class="about-content">
-                <h2>Visión</h2>
 
-                <p>
-                    Para el 2025, Fundación Santa Rosa habrá ejecutado parte de sus programas y proyectos, y podran evidenciarse en la región transformaciones evidentes y considerables a nivel educativo, cultural, de paz y de desarrollo.
-                </p>
-
-            </div>
-
-        </div>
+        <!-- ============================= -->
+        <!-- MISIÓN -->
+        <!-- ============================= -->
 
         <div class="about-card">
+
             <div class="about-image">
-                <img src="images/filo.jpg" alt="Img Filosofia">
+
+                <img
+                    id="imgMisionFirebase"
+                    src=""
+                    alt="Img Mision"
+                >
+
             </div>
+
             <div class="about-content">
-                <h2>Filosofía</h2>
-                <p>
-                    El desarrollo sostenible hace parte de nuestro pensamiento y, por ende, rige todo nuestro actuar, enmarcado en ese sentido en trabajar por el crecimiento económico y social, con respeto al medioambiente y cumpliendo nuestros compromisos con el Estado.
+
+                <h2>Misión</h2>
+
+                <p id="textoMisionFirebase">
+                    <!-- Firebase cargará el texto -->
                 </p>
+
             </div>
+
         </div>
+
+
+        <!-- ============================= -->
+        <!-- VISIÓN -->
+        <!-- ============================= -->
 
         <div class="about-card reverse">
 
             <div class="about-image">
-                <img src="images/esr.jpg" alt="">
+
+                <img
+                    id="imgVisionFirebase"
+                    src=""
+                    alt="Img Vision"
+                >
+
             </div>
 
             <div class="about-content">
-                <h2>Esmeraldas Santa Rosa</h2>
 
-                <p>
-                    Compañía líder en exploración y explotación de esmeraldas, actividad que realiza a través de procesos tecnológicos innovadores, con el fin de brindarle al mercado un producto de alta calidad que satisfaga sus expectativas.               
+                <h2>Visión</h2>
 
-                    <br><br>
-                    Sitio Web:
-                    <br>
-                    <a href="https://www.esmeraldassantarosa.com/" target="_blank" style="color: #00BE36;">www.esmeraldassantarosa.com</a>
+                <p id="textoVisionFirebase">
+                    <!-- Firebase cargará el texto -->
                 </p>
 
             </div>
 
-        </div>        
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- FILOSOFÍA -->
+        <!-- ============================= -->
+
+        <div class="about-card">
+
+            <div class="about-image">
+
+                <img
+                    id="imgFilosofiaFirebase"
+                    src=""
+                    alt="Img Filosofia"
+                >
+
+            </div>
+
+            <div class="about-content">
+
+                <h2>Filosofía</h2>
+
+                <p id="textoFilosofiaFirebase">
+                    <!-- Firebase cargará el texto -->
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- ESMERALDAS SANTA ROSA -->
+        <!-- ============================= -->
+
+        <div class="about-card reverse">
+
+            <div class="about-image">
+
+                <img
+                    id="imgEsmeraldasFirebase"
+                    src=""
+                    alt="Esmeraldas Santa Rosa"
+                >
+
+            </div>
+
+            <div class="about-content">
+                
+                <h2>Esmeraldas Santa Rosa</h2>
+
+                <p id="textoEsmeraldasFirebase">
+                    <!-- Firebase cargará el texto -->
+                </p>
+
+                <p>
+
+                    Sitio Web:
+                    <br>
+
+                        <a
+                            href="https://www.esmeraldassantarosa.com/"
+                            target="_blank"
+                            style="color: #00BE36;"
+        >
+                            www.esmeraldassantarosa.com
+                        </a>
+
+                </p>
+
+            </div>
+
+        </div>
 
     </section>
 
@@ -583,9 +612,15 @@
 
     </div>
 
-    <script src="js/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+    <script type="module" src="js/slider.js"></script>
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/documentos.js"></script>
+    <script type="module" src="js/nosotros.js"></script>
     
 </body>
 </html>
