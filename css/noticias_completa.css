@@ -1,0 +1,754 @@
+/* =========================================
+   HERO DE NOTICIAS
+   ========================================= */
+
+.noticias-hero {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 430px;
+
+    overflow: hidden;
+
+}
+
+/* =========================================
+   IMAGEN DE FONDO
+   ========================================= */
+
+.noticias-hero-imagen {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url("../images/maripi.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+/* =========================================
+   CAPA VERDE
+   ========================================= */
+
+.noticias-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-color: rgba(0, 190, 54, 0.78);
+
+}
+
+
+/* =========================================
+   CONTENIDO DEL HERO
+   ========================================= */
+
+.noticias-hero-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1270px;
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   TEXTO SUPERIOR
+   ========================================= */
+
+.noticias-hero-contenido span {
+
+    margin-bottom: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   TÍTULO
+   ========================================= */
+
+.noticias-hero-contenido h1 {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 58px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   ONDA INFERIOR
+   ========================================= */
+
+.noticias-hero-curva {
+
+    position: absolute;
+
+    z-index: 3;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 130px;
+
+    background-color: #ffffff;
+
+    /*
+       Forma de onda irregular.
+       NO usar border-radius aquí.
+    */
+
+    clip-path: polygon(
+
+        0% 63%,
+        5% 59%,
+        10% 55%,
+        15% 52%,
+        20% 50%,
+        25% 49%,
+        30% 50%,
+        35% 53%,
+        40% 57%,
+        45% 62%,
+        50% 67%,
+        55% 71%,
+        60% 74%,
+        65% 76%,
+        70% 77%,
+        75% 76%,
+        80% 74%,
+        85% 71%,
+        90% 67%,
+        95% 63%,
+        100% 59%,
+
+        100% 100%,
+        0% 100%
+    );
+
+}
+
+/* =========================================
+   CONTENIDO DE LA NOTICIA
+   ========================================= */
+
+.noticia-completa {
+
+    width: 100%;
+
+    padding: 70px 20px 100px;
+
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+
+}
+
+
+.noticia-completa-contenedor {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================
+   TÍTULO DE LA NOTICIA
+   ========================================= */
+
+.noticia-completa-contenedor h2 {
+
+    margin: 0 0 30px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 38px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    color: #0b315c;
+
+    text-align: center;
+
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .noticias-hero {
+
+        height: 380px;
+
+    }
+
+
+    .noticias-hero-contenido {
+
+        padding: 0 35px;
+
+    }
+
+
+    .noticias-hero-contenido span {
+
+        font-size: 16px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .noticias-hero-contenido h1 {
+
+        font-size: 48px;
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULAR
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .noticias-hero {
+
+        height: 330px;
+
+    }
+
+
+    .noticias-hero-contenido {
+
+        padding: 0 25px;
+
+    }
+
+
+    .noticias-hero-contenido span {
+
+        font-size: 14px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .noticias-hero-contenido h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .noticias-hero-curva {
+
+        height: 60px;
+
+    }
+
+
+    .noticia-completa {
+
+        padding: 50px 20px 70px;
+
+    }
+
+
+    .noticia-completa-contenedor h2 {
+
+        font-size: 30px;
+
+    }
+
+}
+
+/* =========================================
+   NOTICIA COMPLETA
+   ========================================= */
+
+.noticia-completa {
+
+    width: 100%;
+
+    padding: 80px 20px 100px;
+
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+
+}
+
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
+
+.noticia-completa-contenedor {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================
+   CABECERA DE LA NOTICIA
+   ========================================= */
+
+.noticia-cabecera {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.noticia-cabecera h1 {
+
+    margin: 0 auto 20px;
+
+    max-width: 900px;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #222222;
+
+}
+
+
+/* =========================================
+   INFORMACIÓN DE LA NOTICIA
+   ========================================= */
+
+.noticia-meta {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 28px;
+
+    width: 100%;
+
+}
+
+
+/* Fecha y autor */
+
+.noticia-fechaD,
+.noticia-autor {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    height: 24px;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-size: 15px;
+
+    line-height: 24px;
+
+    color: #666666;
+
+}
+
+
+/* Iconos */
+
+.noticia-fechaD i,
+.noticia-autor i {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 20px;
+
+    height: 24px;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-size: 19px;
+
+    line-height: 24px;
+
+    color: #00BE36;
+
+}
+
+
+/* =========================================
+   PORTADA
+   ========================================= */
+
+.noticia-portada-contenedor {
+
+    width: 100%;
+
+    margin-bottom: 50px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+}
+
+
+.noticia-portada-imagen {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 600px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.noticia-contenido-completo {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto 50px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #444444;
+
+    text-align: justify;
+
+}
+
+
+.noticia-contenido-completo p {
+
+    margin-bottom: 22px;
+
+}
+
+
+/* =========================================
+   TÍTULOS DE SECCIONES
+   ========================================= */
+
+.noticia-galeria h2,
+.noticia-video h2 {
+
+    position: relative;
+
+    margin: 0 0 30px;
+
+    padding-bottom: 12px;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #222222;
+
+}
+
+
+.noticia-galeria h2::after,
+.noticia-video h2::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    width: 60px;
+
+    height: 3px;
+
+    background-color: #00BE36;
+
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+
+}
+
+
+/* =========================================
+   GALERÍA
+   ========================================= */
+
+.noticia-galeria {
+
+    margin-bottom: 70px;
+
+}
+
+
+.noticia-imagenes {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.imagen-noticia {
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.imagen-noticia:hover {
+
+    transform: scale(1.02);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* =========================================
+   VIDEO
+   ========================================= */
+
+.noticia-video {
+
+    margin-bottom: 40px;
+
+}
+
+
+.video-noticia {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    border-radius: 15px;
+
+    background-color: #000000;
+
+}
+
+
+/* =========================================
+   MENSAJE DE ERROR
+   ========================================= */
+
+.noticia-error {
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+}
+
+
+.noticia-error h2 {
+
+    font-size: 25px;
+
+    color: #555555;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .noticia-completa {
+
+        padding: 55px 15px 70px;
+
+    }
+
+
+    .noticia-cabecera h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .noticia-meta {
+
+        gap: 18px;
+
+    }
+
+
+    .noticia-contenido-completo {
+
+        font-size: 16px;
+
+        text-align: left;
+
+    }
+
+
+    .noticia-imagenes {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+
+    }
+
+
+    .imagen-noticia {
+
+        height: 190px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .noticia-cabecera h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .noticia-imagenes {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .imagen-noticia {
+
+        height: 230px;
+
+    }
+
+}

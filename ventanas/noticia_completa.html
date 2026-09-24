@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias | Fundación Santa Rosa</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/noticias_completa.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="nav-bar" id="home">
+
+            <a href="../index.html" class="logo">
+
+                <img src="../images/logo.png" alt="Logo Fundación Santa Rosa">
+
+            </a>
+
+            <div class="navigation">
+
+                <div class="nav-items">
+
+
+                    <i class="uil uil-times nav-close-btn"></i>
+
+
+                    <a href="index.html#sobre_nosotros">
+
+                        <i class="uil uil-home"></i>
+
+                        Sobre Nosotros
+
+                    </a>
+
+
+                    <a href="#">
+
+                        <i class="uil uil-compass"></i>
+
+                        Nuestros Beneficiados
+
+                    </a>
+
+
+                    <a href="#">
+
+                        <i class="uil uil-images"></i>
+
+                        Galería
+
+                    </a>
+
+
+                    <a href="index.html#noticias">
+
+                        <i class="uil uil-images"></i>
+
+                        Noticias
+
+                    </a>
+
+                    <div class="dropdown">
+
+                        <a href="#">
+
+                            <i class="uil uil-info-circle"></i>
+
+                            Documentos ESAL
+
+                        </a>
+
+
+                        <div
+                            class="dropdown-content"
+                            id="listaDocumentos"
+                        >
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="#">
+
+                        <i class="uil uil-document-layout-left"></i>
+
+                        Lineas Estrategicas
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <i class="uil uil-apps nav-menu-btn"></i>
+
+        </div>
+
+    </header>
+
+
+    <section class="noticias-hero">
+
+        <div class="noticias-hero-imagen">
+
+        </div>
+
+        <div class="noticias-hero-overlay">
+            
+        </div>
+
+        <div class="noticias-hero-contenido">
+
+            <span>
+                FUNDACIÓN SANTA ROSA
+            </span>
+
+            <h1>
+                Noticias
+            </h1>
+
+        </div>
+
+        <div class="noticias-hero-curva">
+
+        </div>
+
+    </section>
+
+
+    <main class="noticia-completa">
+
+        <div class="noticia-completa-contenedor">
+
+            <div class="noticia-cabecera">
+
+                <h1 id="tituloNoticia">
+                    <!-- Encabezado desde Firebase -->
+                </h1>
+
+
+                <div class="noticia-meta">
+
+                    <div class="noticia-fechaD">
+
+                        <i class="uil uil-calendar-alt"></i>
+
+                        <span id="fechaNoticia">
+                            <!-- Fecha -->
+                        </span>
+
+                    </div>
+
+
+                    <div class="noticia-autor">
+
+                        <i class="uil uil-user"></i>
+
+                        <span id="autorNoticia">
+                            <!-- Autor -->
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="portadaNoticia" class="noticia-portada-contenedor">
+                <!-- Portada desde Firebase -->
+            </div>
+
+
+
+            <div id="contenidoNoticia" class="noticia-contenido-completo">
+                <!-- Contenido desde Firebase -->
+            </div>
+
+            <section class="noticia-galeria" id="seccionGaleria">
+
+                <h2>
+
+                    Fotografías
+
+                </h2>
+
+
+                <div id="imagenesNoticia" class="noticia-imagenes">
+                    <!-- Fotografías desde Firebase -->
+                </div>
+
+            </section>
+
+            <section class="noticia-video" id="seccionVideo">
+
+                <h2>
+
+                    Video
+
+                </h2>
+
+
+                <div id="videoNoticia">
+
+                    <!-- Video desde Firebase -->
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- JavaScript -->
+
+    <script type="module" src="../js/firebase.js"></script>
+    <script type="module" src="../js/noticias.js"></script>
+    <script type="module" src="../js/noticia_completa.js"></script>
+
+</body>
+
+</html>
