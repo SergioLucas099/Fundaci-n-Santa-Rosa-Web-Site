@@ -1,0 +1,627 @@
+.lineas-estrategicas-hero {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 430px;
+
+    overflow: hidden;
+
+}
+
+/* =========================================
+   IMAGEN DE FONDO
+   ========================================= */
+
+.lineas-estrategicas-hero-imagen {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url("../images/maripi.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+/* =========================================
+   CAPA VERDE
+   ========================================= */
+
+.lineas-estrategicas-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-color: rgba(0, 190, 54, 0.78);
+
+}
+
+
+/* =========================================
+   CONTENIDO DEL HERO
+   ========================================= */
+
+.lineas-estrategicas-hero-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1270px;
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   TEXTO SUPERIOR
+   ========================================= */
+
+.lineas-estrategicas-hero-contenido span {
+
+    margin-bottom: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   TÍTULO
+   ========================================= */
+
+.lineas-estrategicas-hero-contenido h1 {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 58px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   ONDA INFERIOR
+   ========================================= */
+
+.lineas-estrategicas-hero-curva {
+
+    position: absolute;
+
+    z-index: 3;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 130px;
+
+    background-color: #ffffff;
+
+    /*
+       Forma de onda irregular.
+       NO usar border-radius aquí.
+    */
+
+    clip-path: polygon(
+
+        0% 63%,
+        5% 59%,
+        10% 55%,
+        15% 52%,
+        20% 50%,
+        25% 49%,
+        30% 50%,
+        35% 53%,
+        40% 57%,
+        45% 62%,
+        50% 67%,
+        55% 71%,
+        60% 74%,
+        65% 76%,
+        70% 77%,
+        75% 76%,
+        80% 74%,
+        85% 71%,
+        90% 67%,
+        95% 63%,
+        100% 59%,
+
+        100% 100%,
+        0% 100%
+    );
+
+}
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.lineas-estrategicas-contenido {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px 30px 60px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   IMAGEN PRINCIPAL
+   ========================================================= */
+
+.linea-imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.linea-imagen img {
+    width: 420px;
+    max-width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.linea-imagen img:hover {
+    transform: scale(1.03);
+    transition: transform 0.6s ease;
+}
+
+
+/* =========================================================
+   INTRODUCCIÓN
+   ========================================================= */
+
+.linea-introduccion {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 55px;
+
+    margin: 0 auto 60px;
+
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   TEXTO DE INTRODUCCIÓN
+   ========================================================= */
+
+.linea-introduccion-texto {
+    flex: 1;
+
+    padding: 25px 30px;
+
+    background-color: #f7f9f7;
+
+    border-left: 4px solid #00BE36;
+
+    box-sizing: border-box;
+}
+
+.linea-introduccion-texto p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    text-align: justify;
+}
+
+/* =========================================================
+   IMAGEN PRINCIPAL
+   ========================================================= */
+
+.linea-imagen {
+    flex: 0 0 420px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.linea-imagen img {
+    width: 420px;
+    max-width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+   ========================================================= */
+
+.lineas-estrategicas-contenido h2 {
+    position: relative;
+
+    margin: 0 0 45px;
+
+    padding-bottom: 15px;
+
+    color: #00BE36;
+
+    font-size: 30px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* Línea decorativa debajo del título */
+
+.lineas-estrategicas-contenido h2::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: 70px;
+    height: 3px;
+
+    background-color: #00BE36;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   BLOQUES DE PROGRAMAS
+   ========================================================= */
+
+.linea-programa {
+    margin-bottom: 45px;
+    padding: 30px 35px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e8e8e8;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+
+/* Pequeño efecto al pasar el mouse */
+
+.linea-programa:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 9px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   SUBTÍTULOS
+   ========================================================= */
+
+.linea-programa h3 {
+    position: relative;
+
+    margin: 0 0 18px;
+
+    padding-left: 18px;
+
+    color: #333;
+
+    font-size: 22px;
+    font-weight: 600;
+}
+
+
+/* Línea verde al lado del subtítulo */
+
+.linea-programa h3::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 4px;
+
+    width: 4px;
+    height: 24px;
+
+    background-color: #00BE36;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   PÁRRAFOS
+   ========================================================= */
+
+.linea-programa p {
+    margin: 0 0 18px;
+
+    color: #555;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   LISTAS
+   ========================================================= */
+
+.linea-programa ul {
+    margin: 15px 0 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.linea-programa li {
+    position: relative;
+
+    margin-bottom: 12px;
+    padding-left: 28px;
+
+    color: #555;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* Punto verde */
+
+.linea-programa li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: 1px;
+
+    color: #00BE36;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLETS
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .lineas-estrategicas-contenido {
+        padding: 50px 20px 70px;
+    }
+
+
+    .linea-imagen img {
+        width: 380px;
+        height: 230px;
+    }
+
+
+    .linea-introduccion {
+        padding: 22px 24px;
+
+        font-size: 16px;
+    }
+
+
+    .lineas-estrategicas-contenido h2 {
+        font-size: 26px;
+    }
+
+
+    .linea-programa {
+        padding: 25px;
+    }
+
+
+    .linea-programa h3 {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - CELULARES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .lineas-estrategicas-contenido {
+        padding: 40px 15px 60px;
+    }
+
+
+    .linea-imagen {
+        margin-bottom: 30px;
+    }
+
+
+    .linea-imagen img {
+        width: 100%;
+        height: 210px;
+
+        border-radius: 10px;
+    }
+
+
+    .linea-introduccion {
+        padding: 20px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        text-align: left;
+    }
+
+
+    .lineas-estrategicas-contenido h2 {
+        font-size: 23px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .linea-programa {
+        padding: 22px 20px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .linea-programa h3 {
+        font-size: 19px;
+    }
+
+
+    .linea-programa p,
+    .linea-programa li {
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        text-align: left;
+    }
+
+}
+
+/* =========================================================
+   RESPONSIVE - TABLETS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .linea-introduccion {
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+
+    .linea-introduccion-texto {
+        width: 100%;
+    }
+
+
+    .linea-imagen {
+        width: 100%;
+
+        flex: none;
+    }
+
+
+    .linea-imagen img {
+        width: 420px;
+        height: 250px;
+    }
+
+}
+
+/* =========================================================
+   RESPONSIVE - CELULARES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .lineas-estrategicas-contenido {
+        padding: 40px 15px 60px;
+    }
+
+
+    .linea-introduccion {
+        gap: 25px;
+        margin-bottom: 45px;
+    }
+
+
+    .linea-introduccion-texto {
+        padding: 20px;
+    }
+
+
+    .linea-introduccion-texto p {
+        font-size: 15px;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+
+    .linea-imagen img {
+        width: 100%;
+        height: 210px;
+
+        border-radius: 10px;
+    }
+
+}

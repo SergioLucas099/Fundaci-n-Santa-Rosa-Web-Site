@@ -1,0 +1,336 @@
+/* =========================================
+   LISTADO COMPLETO DE NOTICIAS
+   ========================================= */
+
+.lista-noticias {
+
+    width: 100%;
+
+    padding: 75px 20px 100px;
+
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+
+}
+
+
+.lista-noticias-contenedor {
+
+    width: 100%;
+
+    max-width: 1230px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================
+   TÍTULO
+   ========================================= */
+
+.lista-noticias-titulo {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+
+}
+
+
+.lista-noticias-titulo h2 {
+
+    margin: 0 0 15px;
+
+    font-size: 32px;
+
+    color: #222222;
+
+}
+
+
+.lista-noticias-linea {
+
+    width: 60px;
+
+    height: 3px;
+
+    margin: 0 auto;
+
+    background-color: #00BE36;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================
+   GRID
+   ========================================= */
+
+.lista-noticias-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* =========================================
+   TARJETA
+   ========================================= */
+
+.lista-noticia-card {
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    border-radius: 7px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.lista-noticia-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* =========================================
+   IMAGEN
+   ========================================= */
+
+.lista-noticia-portada {
+
+    display: block;
+
+    width: 100%;
+
+    height: 235px;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.lista-noticia-contenido {
+
+    padding: 30px 20px 25px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   TÍTULO DE LA NOTICIA
+   ========================================= */
+
+.lista-noticia-encabezado {
+
+    margin: 0 0 35px;
+
+    min-height: 25px;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    color: #00BE36;
+
+}
+
+
+/* =========================================
+   FECHA
+   ========================================= */
+
+.lista-noticia-fecha {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 32px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #222222;
+
+}
+
+
+.lista-noticia-fecha i {
+
+    font-size: 18px;
+
+    color: #003B73;
+
+}
+
+
+/* =========================================
+   LEER MÁS
+   ========================================= */
+
+.lista-noticia-leer-mas {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #1877D2;
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease;
+
+}
+
+
+.lista-noticia-leer-mas span {
+
+    font-size: 24px;
+
+    line-height: 1;
+
+}
+
+
+.lista-noticia-leer-mas:hover {
+
+    color: #00BE36;
+
+    gap: 11px;
+
+}
+
+
+/* =========================================
+   SIN NOTICIAS
+   ========================================= */
+
+.sin-noticias {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+}
+
+
+.sin-noticias i {
+
+    font-size: 55px;
+
+    color: #00BE36;
+
+}
+
+
+.sin-noticias h3 {
+
+    margin: 15px 0 8px;
+
+    font-size: 24px;
+
+    color: #333333;
+
+}
+
+
+.sin-noticias p {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    color: #777777;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+    .lista-noticias-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .lista-noticias-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .lista-noticias {
+
+        padding:
+            55px 15px 70px;
+
+    }
+
+
+    .lista-noticias-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

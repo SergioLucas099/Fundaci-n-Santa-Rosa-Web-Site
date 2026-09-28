@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noticias</title>
+
+    <title>Noticias | Fundación Santa Rosa</title>
+
 
     <link rel="stylesheet" href="../css/style.css">
+
     <link rel="stylesheet" href="../css/noticias_completa.css">
+
+    <link rel="stylesheet" href="../css/lista_noticias.css">
+
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
 </head>
+
+
 <body>
 
     <header>
 
         <div class="nav-bar" id="home">
 
+
             <a href="../index.html" class="logo">
-
                 <img src="../images/logo.png" alt="Logo Fundación Santa Rosa">
-
             </a>
+
 
             <div class="navigation">
 
@@ -29,7 +41,7 @@
                     <i class="uil uil-times nav-close-btn"></i>
 
 
-                    <a href="index.html#sobre_nosotros">
+                    <a href="../index.html#sobre_nosotros">
 
                         <i class="uil uil-home"></i>
 
@@ -56,13 +68,14 @@
                     </a>
 
 
-                    <a href="index.html#noticias">
+                    <a href="../index.html#noticias">
 
                         <i class="uil uil-images"></i>
 
                         Noticias
 
                     </a>
+
 
                     <div class="dropdown">
 
@@ -93,11 +106,16 @@
 
                     </a>
 
+
                 </div>
 
             </div>
 
-            <i class="uil uil-apps nav-menu-btn"></i>
+
+            <i
+                class="uil uil-apps nav-menu-btn"
+            ></i>
+
 
         </div>
 
@@ -105,13 +123,16 @@
 
     <section class="noticias-hero">
 
+
         <div class="noticias-hero-imagen">
 
         </div>
 
+
         <div class="noticias-hero-overlay">
 
         </div>
+
 
         <div class="noticias-hero-contenido">
 
@@ -119,17 +140,43 @@
                 FUNDACIÓN SANTA ROSA
             </span>
 
+
             <h1>
                 Noticias
             </h1>
 
         </div>
 
+
         <div class="noticias-hero-curva">
-            
+
         </div>
 
+
     </section>
-    
+
+
+    <main class="lista-noticias">
+
+        <div class="lista-noticias-contenedor">
+
+
+
+            <div id="todasLasNoticias" class="lista-noticias-grid">
+
+                <!-- Las noticias serán cargadas
+                     desde Firebase -->
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+    <script type="module" src="../js/firebase.js"></script>
+    <script type="module" src="../js/lista_noticias.js"></script>
+
 </body>
+
 </html>

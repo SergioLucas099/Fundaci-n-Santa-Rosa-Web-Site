@@ -138,6 +138,22 @@
 
     </section>
 
+    <section class="mapa">
+
+        <div class="mapa-encabezado">
+
+            <h2>Nuestras Sedes</h2>
+
+            <span class="linea-verde"></span>
+
+            <div class="mapa-contenedor" id="mapaFirebase">
+
+            </div>
+
+        </div>
+
+    </section>
+
     <section class="lineas-estrategicas">
 
         <div class="lineas-encabezado">
@@ -412,10 +428,7 @@
 
             <article class="aliado-card">
 
-                <img
-                    src="images/logo.png"
-                    alt="Vereda Santa Rosa"
-                >
+                <img src="images/logo.png" alt="Vereda Santa Rosa">
 
                 <div class="aliado-overlay"></div>
 
@@ -496,6 +509,29 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/script.js"></script>
     <script type="module" src="js/slider.js"></script>
+    <!-- Google Maps: callback disponible antes de cargar la API -->
+    <script>
+
+        window.inicializarMapa = function () {
+
+            window.dispatchEvent(
+                new Event("googleMapsReady")
+            );
+
+        };
+
+    </script>
+
+    <script
+        type="module"
+        src="js/mapa.js">
+    </script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPn7chlHg0Sb6VoYqMQDW8B8RDi0M9kQM&callback=inicializarMapa&loading=async"
+        async
+        defer>
+    </script>
 
     <script type="module" src="js/firebase.js"></script>
     <script type="module" src="js/documentos.js"></script>
