@@ -6,6 +6,10 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
 
+// =========================================
+// REFERENCIA SOBRE NOSOTROS
+// =========================================
+
 const sobreNosotrosRef =
     ref(database, "Sobre_Nosotros");
 
@@ -27,19 +31,75 @@ onValue(sobreNosotrosRef, (snapshot) => {
     // =========================================
 
     const introduccion =
-        snapshot
-            .child("Introduccion")
+        snapshot.child("Introduccion");
+
+
+    const textoIntroduccion =
+        introduccion
+            .child("Texto")
             .val();
 
 
-    const aboutIntro =
-        document.getElementById("aboutIntro");
+    const urlIntroduccion1 =
+        introduccion
+            .child("Url_1")
+            .val();
 
 
-    if (introduccion) {
+    const urlIntroduccion2 =
+        introduccion
+            .child("Url_2")
+            .val();
 
-        aboutIntro.textContent =
-            introduccion;
+
+    // TEXTO
+
+    const textoIntro =
+        document.getElementById(
+            "aboutIntro"
+        );
+
+
+    if (textoIntro) {
+
+        textoIntro.textContent =
+            textoIntroduccion || "";
+    }
+
+
+    // IMAGEN 1
+
+    const imagenIntroduccion1 =
+        document.getElementById(
+            "imgIntroduccion1Firebase"
+        );
+
+
+    if (
+        imagenIntroduccion1 &&
+        urlIntroduccion1
+    ) {
+
+        imagenIntroduccion1.src =
+            urlIntroduccion1;
+    }
+
+
+    // IMAGEN 2
+
+    const imagenIntroduccion2 =
+        document.getElementById(
+            "imgIntroduccion2Firebase"
+        );
+
+
+    if (
+        imagenIntroduccion2 &&
+        urlIntroduccion2
+    ) {
+
+        imagenIntroduccion2.src =
+            urlIntroduccion2;
     }
 
 
@@ -63,17 +123,31 @@ onValue(sobreNosotrosRef, (snapshot) => {
             .val();
 
 
-    document.getElementById(
-        "textoMisionFirebase"
-    ).textContent =
-        textoMision || "";
+    const elementoTextoMision =
+        document.getElementById(
+            "textoMisionFirebase"
+        );
 
 
-    if (urlMision) {
-
+    const elementoImagenMision =
         document.getElementById(
             "imgMisionFirebase"
-        ).src =
+        );
+
+
+    if (elementoTextoMision) {
+
+        elementoTextoMision.textContent =
+            textoMision || "";
+    }
+
+
+    if (
+        elementoImagenMision &&
+        urlMision
+    ) {
+
+        elementoImagenMision.src =
             urlMision;
     }
 
@@ -98,17 +172,31 @@ onValue(sobreNosotrosRef, (snapshot) => {
             .val();
 
 
-    document.getElementById(
-        "textoVisionFirebase"
-    ).textContent =
-        textoVision || "";
+    const elementoTextoVision =
+        document.getElementById(
+            "textoVisionFirebase"
+        );
 
 
-    if (urlVision) {
-
+    const elementoImagenVision =
         document.getElementById(
             "imgVisionFirebase"
-        ).src =
+        );
+
+
+    if (elementoTextoVision) {
+
+        elementoTextoVision.textContent =
+            textoVision || "";
+    }
+
+
+    if (
+        elementoImagenVision &&
+        urlVision
+    ) {
+
+        elementoImagenVision.src =
             urlVision;
     }
 
@@ -133,17 +221,31 @@ onValue(sobreNosotrosRef, (snapshot) => {
             .val();
 
 
-    document.getElementById(
-        "textoFilosofiaFirebase"
-    ).textContent =
-        textoFilosofia || "";
+    const elementoTextoFilosofia =
+        document.getElementById(
+            "textoFilosofiaFirebase"
+        );
 
 
-    if (urlFilosofia) {
-
+    const elementoImagenFilosofia =
         document.getElementById(
             "imgFilosofiaFirebase"
-        ).src =
+        );
+
+
+    if (elementoTextoFilosofia) {
+
+        elementoTextoFilosofia.textContent =
+            textoFilosofia || "";
+    }
+
+
+    if (
+        elementoImagenFilosofia &&
+        urlFilosofia
+    ) {
+
+        elementoImagenFilosofia.src =
             urlFilosofia;
     }
 
@@ -168,17 +270,31 @@ onValue(sobreNosotrosRef, (snapshot) => {
             .val();
 
 
-    document.getElementById(
-        "textoEsmeraldasFirebase"
-    ).textContent =
-        textoEsmeraldas || "";
+    const elementoTextoEsmeraldas =
+        document.getElementById(
+            "textoEsmeraldasFirebase"
+        );
 
 
-    if (urlEsmeraldas) {
-
+    const elementoImagenEsmeraldas =
         document.getElementById(
             "imgEsmeraldasFirebase"
-        ).src =
+        );
+
+
+    if (elementoTextoEsmeraldas) {
+
+        elementoTextoEsmeraldas.textContent =
+            textoEsmeraldas || "";
+    }
+
+
+    if (
+        elementoImagenEsmeraldas &&
+        urlEsmeraldas
+    ) {
+
+        elementoImagenEsmeraldas.src =
             urlEsmeraldas;
     }
 

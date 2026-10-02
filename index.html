@@ -64,9 +64,9 @@
     
     <section class="seccion-fundacion">        
 
-        <img src="images/logo_portada.jpg" alt="Imagen 1">
+        <img id="imgIntroduccion1Firebase" src="images/logo_portada.jpg" alt="Imagen 1">
 
-        <p>
+        <p id="aboutIntro">
             En el corazón de Maripí, Boyacá, nace la Fundación Santa Rosa, una iniciativa que recoge y proyecta más de dos décadas de compromiso con las comunidades de la región.
 
             Somos el brazo social de Esmeraldas Santa Rosa y trabajamos para impulsar oportunidades que aporten al bienestar de las personas, fortalezcan el tejido comunitario y promuevan un desarrollo sostenible, respetando siempre las raíces, la cultura y la identidad de nuestro territorio.
@@ -74,31 +74,28 @@
             A través de la educación, el fortalecimiento de capacidades, el desarrollo productivo y rural, y el bienestar comunitario, acompañamos a las comunidades en la construcción de nuevas oportunidades y de un futuro con mayores posibilidades para todos.
         </p>
 
-        <img src="images/portada.jpg" alt="Imagen 2">
+        <img id="imgIntroduccion2Firebase" src="images/portada.jpg" alt="Imagen 2">
 
         <div class="fundacion-tarjetas">
 
             <article class="tarjeta-fundacion">
 
-                <img src="images/portada.jpg" alt="Misión">
+                <img id="imgMisionFirebase" src="images/portada.jpg" alt="Misión">
 
                 <h2>Misión</h2>
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer posuere erat a ante. Sed dignissim, sapien vitae
-                    tincidunt tincidunt, neque lorem facilisis justo.
+                <p id="textoMisionFirebase"></p>
                 </p>
 
             </article>
 
             <article class="tarjeta-fundacion">
 
-                <img src="images/portada.jpg" alt="Visión">
+                <img id="imgVisionFirebase" src="images/portada.jpg" alt="Visión">
 
                 <h2>Visión</h2>
 
-                <p>
+                <p id="textoVisionFirebase">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Integer posuere erat a ante. Sed dignissim, sapien vitae
                     tincidunt tincidunt, neque lorem facilisis justo.
@@ -108,11 +105,11 @@
 
             <article class="tarjeta-fundacion">
 
-                <img src="images/portada.jpg" alt="Filosofía">
+                <img id="imgFilosofiaFirebase" src="images/portada.jpg" alt="Filosofía">
 
                 <h2>Filosofía</h2>
 
-                <p>
+                <p id="textoFilosofiaFirebase">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Integer posuere erat a ante. Sed dignissim, sapien vitae
                     tincidunt tincidunt, neque lorem facilisis justo.
@@ -122,11 +119,11 @@
 
             <article class="tarjeta-fundacion">
 
-                <img src="images/portada.jpg" alt="Esmeraldas Santa Rosa">
+                <img id="imgEsmeraldasFirebase" src="images/portada.jpg" alt="Esmeraldas Santa Rosa">
 
                 <h2>Esmeraldas Santa Rosa</h2>
 
-                <p>
+                <p id="textoEsmeraldasFirebase">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Integer posuere erat a ante. Sed dignissim, sapien vitae
                     tincidunt tincidunt, neque lorem facilisis justo.
@@ -178,7 +175,7 @@
             <article class="linea-card">
 
                 <img
-                    src="images/logo.png"
+                    src="images/ed_y_cul.jpg"
                     alt="Imagen Educación y cultura"
                 >
 
@@ -205,7 +202,7 @@
             <article class="linea-card">
 
                 <img
-                    src="images/logo.png"
+                    src="images/desarrollo.jpg"
                     alt="Imagen Desarrollo económico y local"
                 >
 
@@ -232,7 +229,7 @@
             <article class="linea-card">
 
                 <img
-                    src="images/logo.png"
+                    src="images/gobernanza.jpg"
                     alt="Imagen Gobernanza y paz"
                 >
 
@@ -277,47 +274,9 @@
 
         <div class="patrocinadores-slider">
 
-            <div class="patrocinadores-track">
+            <div class="patrocinadores-track" id="patrocinadoresTrack">
 
-                <div class="patrocinador">
-                    <img src="images/logo.png" alt="Convenio 1">
-                </div>
-
-                <div class="patrocinador">
-                    <img src="images/logo.png" alt="Convenio 2">
-                </div>
-
-                <div class="patrocinador">
-                    <img src="images/logo.png" alt="Convenio 3">
-                </div>
-
-                <div class="patrocinador">
-                    <img src="images/logo.png" alt="Convenio 4">
-                </div>
-
-                <div class="patrocinador">
-                    <img src="images/logo.png" alt="Convenio 5">
-                </div>
-
-                <div class="patrocinador">
-                    <img src="images/logo.png" alt="Convenio 6">
-                </div>
-
-                <div class="patrocinador">
-                    <img src="images/logo.png" alt="Convenio 7">
-                </div>
-
-                <div class="patrocinador">
-                    <img src="images/logo.png" alt="Convenio 8">
-                </div>
-
-                <div class="patrocinador">
-                    <img src="images/logo.png" alt="Convenio 9">
-                </div>
-
-                <div class="patrocinador">
-                    <img src="images/logo.png" alt="Convenio 10">
-                </div>
+                <!-- Los patrocinadores se cargarán desde Firebase -->
 
             </div>
 
@@ -361,7 +320,7 @@
             <article class="aliado-card">
 
                 <img
-                    src="images/logo.png"
+                    src="images/deypa.jpg"
                     alt="Población de Maripí"
                 >
 
@@ -384,7 +343,7 @@
             <article class="aliado-card">
 
                 <img
-                    src="images/logo.png"
+                    src="images/cuna.jpg"
                     alt="Producción agrícola de Maripí"
                 >
 
@@ -407,7 +366,7 @@
             <article class="aliado-card">
 
                 <img
-                    src="images/logo.png"
+                    src="images/esmeralda2.jpg"
                     alt="Zona esmeraldífera de Maripí"
                 >
 
@@ -428,7 +387,7 @@
 
             <article class="aliado-card">
 
-                <img src="images/logo.png" alt="Vereda Santa Rosa">
+                <img src="images/family.jpg" alt="Vereda Santa Rosa">
 
                 <div class="aliado-overlay"></div>
 
@@ -457,8 +416,12 @@
 
             <span class="linea-verde"></span>
 
-            <div class="galeria-contenedor" id="galeriaFirebase">
+            <div class="galeria-categorias" id="categoriasFirebase">
 
+            </div>
+
+            <div class="galeria-contenedor" id="galeriaFirebase">
+                
             </div>
 
         </div>
@@ -496,6 +459,10 @@
 
     </section>
 
+    <footer>
+        
+    </footer>
+
     
 
     
@@ -507,7 +474,6 @@
     <script src="js/main.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="js/script.js"></script>
     <script type="module" src="js/slider.js"></script>
     <!-- Google Maps: callback disponible antes de cargar la API -->
     <script>
@@ -537,6 +503,8 @@
     <script type="module" src="js/documentos.js"></script>
     <script type="module" src="js/nosotros.js"></script>
     <script type="module" src="js/noticias.js"></script>
+    <script type="module" src="js/galeria.js"></script>
+    <script type="module" src="js/patrocinadores.js"></script>
     
 </body>
 </html>
