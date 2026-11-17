@@ -15,7 +15,7 @@
 
 
     <header>
-        <div class="nav-bar" id="home">
+        <div class="nav-bar">
 
             <!-- LOGO -->
             <a href="#home" class="logo" id="logoMenuBtn" aria-label="Abrir menú" aria-expanded="false"
@@ -28,7 +28,7 @@
             <!-- NAVEGACIÓN -->
             <div class="navigation" id="navigation">
 
-                <div class="nav-items">
+                <div class="nav-items" id="home">
 
                     <!-- BOTÓN CERRAR -->
                     <button class="nav-close-btn" id="navCloseBtn" aria-label="Cerrar menú">
@@ -39,11 +39,11 @@
                         <i class="uil uil-home"></i> Sobre Nosotros
                     </a>
 
-                    <a href="#">
+                    <a href="#nuestros_beneficiados">
                         <i class="uil uil-compass"></i> Nuestros Beneficiados
                     </a>
 
-                    <a href="#">
+                    <a href="#galeria">
                         <i class="uil uil-images"></i> Galería
                     </a>
 
@@ -54,10 +54,13 @@
                     <!-- DOCUMENTOS ESAL -->
                     <div class="dropdown">
 
-                        <a href="#" class="dropdown-toggle" id="documentosToggle">
+                        <a href="#" class="dropdown-toggle" id="documentosToggle" aria-expanded="false"
+                            aria-controls="listaDocumentos">
+
                             <i class="uil uil-info-circle"></i>
                             Documentos ESAL
                             <i class="uil uil-angle-down dropdown-arrow"></i>
+
                         </a>
 
                         <div class="dropdown-content" id="listaDocumentos">
@@ -65,7 +68,7 @@
 
                     </div>
 
-                    <a href="#">
+                    <a href="#lineas_estrategicas">
                         <i class="uil uil-document-layout-left"></i>
                         Líneas Estratégicas
                     </a>
@@ -147,7 +150,7 @@
     </div>
 
 
-    <section class="seccion-fundacion">
+    <section class="seccion-fundacion" id="sobre_nosotros">
 
         <img id="imgIntroduccion1Firebase" src="images/logo_portada.jpg" alt="Imagen 1">
 
@@ -231,7 +234,7 @@
 
     </section>
 
-    <section class="lineas-estrategicas">
+    <section class="lineas-estrategicas" id="lineas_estrategicas">
 
         <div class="lineas-encabezado">
 
@@ -356,7 +359,7 @@
 
     </section>
 
-    <section class="nuestros-aliados">
+    <section class="nuestros-aliados" id="nuestros_beneficiados">
 
         <div class="aliados-encabezado">
 
@@ -471,7 +474,7 @@
 
     </section>
 
-    <section class="galeria">
+    <section class="galeria" id="galeria">
 
         <div class="galeria-encabezado">
 
@@ -491,7 +494,7 @@
 
     </section>
 
-    <section class="noticias">
+    <section class="noticias" id="noticias">
 
         <div class="noticias-encabezado">
 
@@ -529,7 +532,7 @@
 
             <div class="footer-columna footer-identidad">
 
-                <img src="images/logo_portada.png" alt="Fundación Santa Rosa" class="footer-logo">
+                <img src="images/logo.png" alt="Fundación Santa Rosa" class="footer-logo">
 
                 <p>
                     Fundación Santa Rosa, comprometida con el

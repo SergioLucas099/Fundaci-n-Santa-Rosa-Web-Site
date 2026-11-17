@@ -68,6 +68,32 @@ function cerrarMenu() {
 
 }
 
+
+// Dropdown Documentos ESAL
+
+documentosToggle.addEventListener("click", (event) => {
+
+    if (window.innerWidth <= 991) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        const dropdown = documentosToggle.closest(".dropdown");
+
+        const submenuAbierto = dropdown.classList.contains("active");
+
+        dropdown.classList.toggle("active");
+
+        documentosToggle.setAttribute(
+            "aria-expanded",
+            String(!submenuAbierto)
+        );
+
+    }
+
+});
+
+
 // Botón X
 closeBtn.addEventListener("click", cerrarMenu);
 
@@ -782,3 +808,13 @@ function mostrarInformacion(sede){
     `;
 
 }
+
+// Cerrar el submenú ESAL al cambiar al modo escritorio
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 991) {
+        const dropdown = documentosToggle.closest(".dropdown");
+
+        dropdown.classList.remove("active");
+        documentosToggle.setAttribute("aria-expanded", "false");
+    }
+});

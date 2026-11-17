@@ -3445,3 +3445,82 @@ header.sticky~.media-icons a:hover {
     }
 
 }
+
+
+/* ==========================================
+   DOCUMENTOS ESAL - MENU RESPONSIVO
+========================================== */
+
+@media screen and (max-width: 991px) {
+
+    /* Contenedor dropdown */
+    .navigation .dropdown {
+        display: block;
+        width: 100%;
+    }
+
+    /* Enlace principal */
+    .navigation .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    /* Flecha */
+    .navigation .dropdown-arrow {
+        margin-left: auto;
+        transition: transform 0.3s ease;
+    }
+
+    /* Girar flecha cuando se abre */
+    .navigation .dropdown.active .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Submenu cerrado */
+    .navigation .dropdown-content {
+        display: none;
+
+        position: static;
+        width: 100%;
+        min-width: 100%;
+
+        margin-top: 8px;
+
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(10px);
+
+        border-left: 3px solid #00BE36;
+        border-radius: 5px;
+
+        box-shadow: none;
+    }
+
+    /* Submenu abierto */
+    .navigation .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    /* Documentos PDF */
+    .navigation .dropdown-content a {
+        display: block;
+
+        padding: 12px 15px 12px 25px;
+
+        color: #FFFFFF !important;
+
+        font-size: 14px;
+        text-decoration: none;
+
+        transition: 0.3s ease;
+    }
+
+    /* Hover de documentos */
+    .navigation .dropdown-content a:hover {
+        background: rgba(0, 190, 54, 0.2);
+        color: #00BE36 !important;
+    }
+
+}
