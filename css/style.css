@@ -667,7 +667,7 @@ header.sticky~.media-icons a:hover {
     }
 
     .swiper-slide .text-content {
-        top: 15%;
+        top: 40%;
         left: 5%;
         right: 5%;
     }
@@ -3418,6 +3418,30 @@ header.sticky~.media-icons a:hover {
     header.sticky .navigation .nav-items>a:hover i,
     header.sticky .navigation .dropdown-toggle:hover i {
         color: #00BE36 !important;
+    }
+
+}
+
+
+/* ==========================================
+   CENTRAR TEXTO DEL SLIDER EN RESPONSIVE
+========================================== */
+
+@media screen and (max-width: 1024px) {
+
+    .swiper-slide .text-content {
+        position: absolute;
+
+        top: 50%;
+        left: 5%;
+        right: 5%;
+
+        width: auto;
+        max-width: none;
+
+        transform: translateY(-50%);
+
+        text-align: left;
     }
 
 }
