@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,50 +8,108 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
+
 <body>
+
 
     <header>
         <div class="nav-bar" id="home">
-            <a href="#home" class="logo"><img src="images/logo.png" alt="Logo FSR"></a>
-            <div class="navigation">
-                <div class="nav-items">
-                    <i class="uil uil-times nav-close-btn"></i>
-                    <a href="#sobre_nosotros"><i class="uil uil-home"></i> Sobre Nosotros</a>
-                    <a href="#"><i class="uil uil-compass"></i> Nuestros Beneficiados</a>
-                    <a href="#"><i class="uil uil-images"></i> Galería</a>
-                    <a href="#noticias"><i class="uil uil-images"></i> Noticias</a>
 
+            <!-- LOGO -->
+            <a href="#home" class="logo" id="logoMenuBtn" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="navigation">
+
+                <img src="images/logo.png" alt="Logo FSR">
+
+            </a>
+
+            <!-- NAVEGACIÓN -->
+            <div class="navigation" id="navigation">
+
+                <div class="nav-items">
+
+                    <!-- BOTÓN CERRAR -->
+                    <button class="nav-close-btn" id="navCloseBtn" aria-label="Cerrar menú">
+                        <i class="uil uil-times"></i>
+                    </button>
+
+                    <a href="#sobre_nosotros">
+                        <i class="uil uil-home"></i> Sobre Nosotros
+                    </a>
+
+                    <a href="#">
+                        <i class="uil uil-compass"></i> Nuestros Beneficiados
+                    </a>
+
+                    <a href="#">
+                        <i class="uil uil-images"></i> Galería
+                    </a>
+
+                    <a href="#noticias">
+                        <i class="uil uil-images"></i> Noticias
+                    </a>
+
+                    <!-- DOCUMENTOS ESAL -->
                     <div class="dropdown">
 
-                        <a href="#">
-                            <i class="uil uil-info-circle"></i> Documentos ESAL
+                        <a href="#" class="dropdown-toggle" id="documentosToggle">
+                            <i class="uil uil-info-circle"></i>
+                            Documentos ESAL
+                            <i class="uil uil-angle-down dropdown-arrow"></i>
                         </a>
 
                         <div class="dropdown-content" id="listaDocumentos">
-                            
                         </div>
+
                     </div>
 
-                    <a href="#"><i class="uil uil-document-layout-left"></i> Lineas Estrategicas</a>
+                    <a href="#">
+                        <i class="uil uil-document-layout-left"></i>
+                        Líneas Estratégicas
+                    </a>
+
+                    <!-- REDES SOCIALES -->
+                    <div class="media-icons">
+
+                        <a target="_blank" rel="noopener noreferrer"
+                            href="https://www.facebook.com/Esmeraldas-Santa-Rosa-367472244106694/">
+                            <i class="uil uil-facebook-f"></i>
+                        </a>
+
+                        <a target="_blank" rel="noopener noreferrer"
+                            href="https://www.instagram.com/esmeraldassantarosa/?hl=en">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/EsmeraldasSanta">
+                            <i class="uil uil-twitter-alt"></i>
+                        </a>
+
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@FundacionSantaRosa">
+                            <i class="uil uil-youtube"></i>
+                        </a>
+
+                        <a target="_blank" rel="noopener noreferrer"
+                            href="https://www.tiktok.com/@fundacionsantarosa?lang=es-419">
+                            <i class="uil uil-music"></i>
+                        </a>
+
+                    </div>
+
                 </div>
             </div>
-            <i class="uil uil-apps nav-menu-btn"></i>
+
         </div>
     </header>
 
+
     <section class="home">
-        <div class="media-icons">
-            <a target="_blank" href="https://www.facebook.com/Esmeraldas-Santa-Rosa-367472244106694/"><i class="uil uil-facebook-f"></i></a>
-            <a target="_blank" href="https://www.instagram.com/esmeraldassantarosa/?hl=en"><i class="uil uil-instagram"></i></a>
-            <a target="_blank" href="https://twitter.com/EsmeraldasSanta"><i class="uil uil-twitter-alt"></i></a>
-            <a target="_blank" href="https://www.youtube.com/@FundacionSantaRosa"><i class="uil uil-youtube"></i></a>
-            <a target="_blank" href="https://www.tiktok.com/@fundacionsantarosa?lang=es-419"><i class="uil uil-outline"></i></i></a>
-        </div>
+
         <div class="swiper bg-slider dark-layer">
             <div class="swiper-wrapper" id="sliderFirebase">
-                                
+
             </div>
         </div>
 
@@ -59,19 +118,40 @@
 
             </div>
         </div>
+
     </section>
 
-    
-    <section class="seccion-fundacion">        
+    <!-- Iconos de redes sociales -->
+    <div class="media-icons">
+
+        <a target="_blank" href="https://www.facebook.com/Esmeraldas-Santa-Rosa-367472244106694/">
+            <i class="uil uil-facebook-f"></i>
+        </a>
+
+        <a target="_blank" href="https://www.instagram.com/esmeraldassantarosa/?hl=en">
+            <i class="uil uil-instagram"></i>
+        </a>
+
+        <a target="_blank" href="https://twitter.com/EsmeraldasSanta">
+            <i class="uil uil-twitter-alt"></i>
+        </a>
+
+        <a target="_blank" href="https://www.youtube.com/@FundacionSantaRosa">
+            <i class="uil uil-youtube"></i>
+        </a>
+
+        <a target="_blank" href="https://www.tiktok.com/@fundacionsantarosa?lang=es-419">
+            <i class="uil uil-outline"></i>
+        </a>
+
+    </div>
+
+
+    <section class="seccion-fundacion">
 
         <img id="imgIntroduccion1Firebase" src="images/logo_portada.jpg" alt="Imagen 1">
 
         <p id="aboutIntro">
-            En el corazón de Maripí, Boyacá, nace la Fundación Santa Rosa, una iniciativa que recoge y proyecta más de dos décadas de compromiso con las comunidades de la región.
-
-            Somos el brazo social de Esmeraldas Santa Rosa y trabajamos para impulsar oportunidades que aporten al bienestar de las personas, fortalezcan el tejido comunitario y promuevan un desarrollo sostenible, respetando siempre las raíces, la cultura y la identidad de nuestro territorio.
-
-            A través de la educación, el fortalecimiento de capacidades, el desarrollo productivo y rural, y el bienestar comunitario, acompañamos a las comunidades en la construcción de nuevas oportunidades y de un futuro con mayores posibilidades para todos.
         </p>
 
         <img id="imgIntroduccion2Firebase" src="images/portada.jpg" alt="Imagen 2">
@@ -174,10 +254,7 @@
 
             <article class="linea-card">
 
-                <img
-                    src="images/ed_y_cul.jpg"
-                    alt="Imagen Educación y cultura"
-                >
+                <img src="images/ed_y_cul.jpg" alt="Imagen Educación y cultura">
 
                 <div class="linea-card-contenido">
 
@@ -201,10 +278,7 @@
 
             <article class="linea-card">
 
-                <img
-                    src="images/desarrollo.jpg"
-                    alt="Imagen Desarrollo económico y local"
-                >
+                <img src="images/desarrollo.jpg" alt="Imagen Desarrollo económico y local">
 
                 <div class="linea-card-contenido">
 
@@ -228,10 +302,7 @@
 
             <article class="linea-card">
 
-                <img
-                    src="images/gobernanza.jpg"
-                    alt="Imagen Gobernanza y paz"
-                >
+                <img src="images/gobernanza.jpg" alt="Imagen Gobernanza y paz">
 
                 <div class="linea-card-contenido">
 
@@ -266,7 +337,8 @@
             <h2>Alianzas Estratégicas</h2>
 
             <p>
-                Contamos con el apoyo de instituciones, empresas y organizaciones que se unen a nuestra labor para generar nuevas oportunidades y contribuir al desarrollo de nuestras comunidades.
+                Contamos con el apoyo de instituciones, empresas y organizaciones que se unen a nuestra labor para
+                generar nuevas oportunidades y contribuir al desarrollo de nuestras comunidades.
             </p>
 
         </div>
@@ -319,10 +391,7 @@
 
             <article class="aliado-card">
 
-                <img
-                    src="images/deypa.jpg"
-                    alt="Población de Maripí"
-                >
+                <img src="images/deypa.jpg" alt="Población de Maripí">
 
                 <div class="aliado-overlay"></div>
 
@@ -342,10 +411,7 @@
 
             <article class="aliado-card">
 
-                <img
-                    src="images/cuna.jpg"
-                    alt="Producción agrícola de Maripí"
-                >
+                <img src="images/cuna.jpg" alt="Producción agrícola de Maripí">
 
                 <div class="aliado-overlay"></div>
 
@@ -365,10 +431,7 @@
 
             <article class="aliado-card">
 
-                <img
-                    src="images/esmeralda2.jpg"
-                    alt="Zona esmeraldífera de Maripí"
-                >
+                <img src="images/esmeralda2.jpg" alt="Zona esmeraldífera de Maripí">
 
                 <div class="aliado-overlay"></div>
 
@@ -421,13 +484,13 @@
             </div>
 
             <div class="galeria-contenedor" id="galeriaFirebase">
-                
+
             </div>
 
         </div>
 
     </section>
-    
+
     <section class="noticias">
 
         <div class="noticias-encabezado">
@@ -460,118 +523,105 @@
     </section>
 
 
-<footer class="footer">
+    <footer class="footer">
 
-    <div class="footer-contenido">
+        <div class="footer-contenido">
 
-        <div class="footer-columna footer-identidad">
+            <div class="footer-columna footer-identidad">
 
-            <img
-                src="images/logo_portada.png"
-                alt="Fundación Santa Rosa"
-                class="footer-logo"
-            >
+                <img src="images/logo_portada.png" alt="Fundación Santa Rosa" class="footer-logo">
 
-            <p>
-                Fundación Santa Rosa, comprometida con el
-                desarrollo social, educativo y comunitario
-                de las comunidades de nuestro territorio.
-            </p>
+                <p>
+                    Fundación Santa Rosa, comprometida con el
+                    desarrollo social, educativo y comunitario
+                    de las comunidades de nuestro territorio.
+                </p>
 
-        </div>
+            </div>
 
-        <div class="footer-columna">
+            <div class="footer-columna">
 
-            <h3>Trabajamos por</h3>
+                <h3>Trabajamos por</h3>
 
-            <ul>
+                <ul>
 
-                <li>
-                    <a href="ventanas/educacion_cultura.html">
-                        Educación y Cultura
+                    <li>
+                        <a href="ventanas/educacion_cultura.html">
+                            Educación y Cultura
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="ventanas/desarrollo_economico_local.html">
+                            Desarrollo Productivo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="ventanas/gobernanza_paz.html">
+                            Gobernanza y Paz
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-columna footer-contacto">
+
+                <h3>Contáctanos</h3>
+
+                <p>
+                    <strong>Ubicación</strong><br>
+                    Centro Comercial Santa Maria Segundo Piso, Chiquinquirá - Boyacá
+                </p>
+
+                <p>
+                    <strong>Correo</strong><br>
+
+                    <a href="mailto:contacto@fundacionsantarosa.com">
+                        contacto@fundacionsantarosa.com
                     </a>
-                </li>
+                </p>
 
-                <li>
-                    <a href="ventanas/desarrollo_economico_local.html">
-                        Desarrollo Productivo
+
+
+                <div class="footer-redes">
+
+                    <a href="#" aria-label="Facebook">
+                        f
                     </a>
-                </li>
 
-                <li>
-                    <a href="ventanas/gobernanza_paz.html">
-                        Gobernanza y Paz
+                    <a href="#" aria-label="Instagram">
+                        ig
                     </a>
-                </li>
 
-            </ul>
+                    <a href="#" aria-label="WhatsApp">
+                        wa
+                    </a>
 
-        </div>
-
-
-        <div class="footer-columna footer-contacto">
-
-            <h3>Contáctanos</h3>
-
-            <p>
-                <strong>Ubicación</strong><br>
-                Centro Comercial Santa Maria Segundo Piso, Chiquinquirá - Boyacá
-            </p>
-
-            <p>
-                <strong>Correo</strong><br>
-
-                <a href="mailto:contacto@fundacionsantarosa.com">
-                    contacto@fundacionsantarosa.com
-                </a>
-            </p>
-
-
-
-            <div class="footer-redes">
-
-                <a
-                    href="#"
-                    aria-label="Facebook"
-                >
-                    f
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="Instagram"
-                >
-                    ig
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="WhatsApp"
-                >
-                    wa
-                </a>
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+        <div class="footer-inferior">
 
-    <div class="footer-inferior">
+            <p>
+                © 2026 Fundación Santa Rosa.
+                Todos los derechos reservados.
+            </p>
 
-        <p>
-            © 2026 Fundación Santa Rosa.
-            Todos los derechos reservados.
-        </p>
+            <p>
+                Esmeraldas Santa Rosa
+            </p>
 
-        <p>
-            Esmeraldas Santa Rosa
-        </p>
+        </div>
 
-    </div>
-
-</footer>
-```
+    </footer>
+    ```
 
 
     <script src="js/main.js"></script>
@@ -591,16 +641,13 @@
 
     </script>
 
-    <script
-        type="module"
-        src="js/mapa.js">
+    <script type="module" src="js/mapa.js">
     </script>
 
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPn7chlHg0Sb6VoYqMQDW8B8RDi0M9kQM&callback=inicializarMapa&loading=async"
-        async
-        defer>
-    </script>
+        async defer>
+        </script>
 
     <script type="module" src="js/firebase.js"></script>
     <script type="module" src="js/documentos.js"></script>
@@ -608,6 +655,7 @@
     <script type="module" src="js/noticias.js"></script>
     <script type="module" src="js/galeria.js"></script>
     <script type="module" src="js/patrocinadores.js"></script>
-    
+
 </body>
+
 </html>

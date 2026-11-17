@@ -27,18 +27,81 @@ window.addEventListener("scroll", function(){
     header.classList.toggle("sticky", window.scrollY > 0);
 });
 
-//Responsive navigation menu toggle
-const menuBtn = document.querySelector(".nav-menu-btn");
-const closeBtn = document.querySelector(".nav-close-btn");
-const navigation = document.querySelector(".navigation");
 
-menuBtn.addEventListener("click", () => {
-    navigation.classList.add("active");
+// Responsive navigation menu toggle
+
+const navigation = document.getElementById("navigation");
+const logoMenuBtn = document.getElementById("logoMenuBtn");
+const closeBtn = document.getElementById("navCloseBtn");
+
+// Abrir y cerrar menú desde el logo
+logoMenuBtn.addEventListener("click", (event) => {
+
+    if (window.innerWidth <= 991) {
+
+        event.preventDefault();
+
+        const menuAbierto = navigation.classList.contains("active");
+
+        if (menuAbierto) {
+
+            cerrarMenu();
+
+        } else {
+
+            navigation.classList.add("active");
+
+            logoMenuBtn.setAttribute("aria-expanded", "true");
+
+        }
+
+    }
+
 });
 
-closeBtn.addEventListener("click", () => {
+// Función para cerrar menú
+function cerrarMenu() {
+
     navigation.classList.remove("active");
+
+    logoMenuBtn.setAttribute("aria-expanded", "false");
+
+}
+
+// Botón X
+closeBtn.addEventListener("click", cerrarMenu);
+
+// Cerrar al seleccionar una opción
+navigation.querySelectorAll(".nav-items > a").forEach(link => {
+
+    link.addEventListener("click", cerrarMenu);
+
 });
+
+// Cerrar al pulsar fuera del menú
+document.addEventListener("click", (event) => {
+
+    if (
+        navigation.classList.contains("active") &&
+        !navigation.contains(event.target) &&
+        !logoMenuBtn.contains(event.target)
+    ) {
+
+        cerrarMenu();
+
+    }
+
+});
+
+// Cerrar con Escape
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+        cerrarMenu();
+    }
+
+});
+
 
 //==============================
 // Animaciones al hacer scroll
