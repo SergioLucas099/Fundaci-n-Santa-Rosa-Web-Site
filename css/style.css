@@ -3544,3 +3544,37 @@ header.sticky~.media-icons a:hover {
     }
 
 }
+
+/* =========================================
+   ESTILO UNIFICADO DE PÁRRAFOS DESCRIPTIVOS
+========================================= */
+
+.seccion-fundacion > p,
+.tarjeta-fundacion p,
+.lineas-encabezado p,
+.linea-card p,
+.patrocinadores-info p,
+.aliados-maripi p,
+.info-sede p {
+
+    color: #666666;
+    font-weight: var(--light);
+
+}
+
+/* =========================================
+   DESTACAR TÍTULOS DE TARJETAS FUNDACIÓN
+========================================= */
+
+.tarjeta-fundacion h2::after {
+    content: "";
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    margin: 12px auto 0;
+
+    background-color: #00BE36;
+    border-radius: 10px;
+}
