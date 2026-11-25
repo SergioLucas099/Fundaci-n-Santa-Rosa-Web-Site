@@ -1,12 +1,13 @@
-/*====== Google Fonts - Inter Variable ======*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/*====== Google Fonts - Fundación Santa Rosa ======*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
 
 /*====== CSS Variables ======*/
 :root {
 
     /* Tipografía institucional */
-    --font-principal: 'Inter', sans-serif;
+    --font-principal: 'Source Sans Pro', sans-serif;
+    --font-titulos: 'Noto Serif', serif;
 
     --thin: 100;
     --extra-light: 200;
@@ -2392,12 +2393,6 @@ header.sticky~.media-icons a:hover {
     text-align: center;
 }
 
-.mapa-encabezado h2 {
-    margin: 0;
-    font-size: 32px;
-    color: #333;
-}
-
 .linea-verde {
     display: block;
     width: 70px;
@@ -2878,11 +2873,7 @@ header.sticky~.media-icons a:hover {
 
 .footer-logo {
 
-    width: 170px;
-
-    max-width: 100%;
-
-    margin-bottom: 22px;
+    width: 250px;
 
 }
 
@@ -3577,4 +3568,248 @@ header.sticky~.media-icons a:hover {
 
     background-color: #00BE36;
     border-radius: 10px;
+}
+
+/* =========================================
+   TIPOGRAFÍA ORIGINAL FUNDACIÓN SANTA ROSA
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.swiper-slide .text-content .title,
+.swiper-slide .text-content .subtitle {
+    font-family: var(--font-titulos) !important;
+}
+
+
+/* =========================================
+   CONTROLES DEL SLIDER
+========================================= */
+
+.patrocinadores-slider {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.patrocinadores-viewport {
+    width: 100%;
+    overflow: hidden;
+    touch-action: pan-y;
+    cursor: grab;
+}
+
+.patrocinadores-viewport:active {
+    cursor: grabbing;
+}
+
+.patrocinadores-track {
+    display: flex;
+    will-change: transform;
+}
+
+.patrocinador {
+    cursor: pointer;
+}
+
+.patrocinador img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.patrocinador:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   BOTONES ANTERIOR Y SIGUIENTE
+========================================= */
+
+.patrocinadores-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #00BE36;
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.patrocinadores-btn:hover {
+    background: #00962b;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.patrocinadores-btn.anterior {
+    left: 5px;
+}
+
+.patrocinadores-btn.siguiente {
+    right: 5px;
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.patrocinador-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.90);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    z-index: 99999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease,
+                visibility 0.3s ease;
+}
+
+.patrocinador-lightbox.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.patrocinador-lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+    animation: aparecerImagen 0.3s ease;
+}
+
+
+/* =========================================
+   BOTÓN CERRAR
+========================================= */
+
+.lightbox-cerrar {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: #00BE36;
+
+    font-size: 32px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.lightbox-cerrar:hover {
+    background: #00BE36;
+    color: white;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================
+   ANIMACIÓN DE APARICIÓN
+========================================= */
+
+@keyframes aparecerImagen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .patrocinadores-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .patrocinadores-btn.anterior {
+        left: 2px;
+    }
+
+    .patrocinadores-btn.siguiente {
+        right: 2px;
+    }
+
+    .patrocinador-lightbox {
+        padding: 15px;
+    }
+
+    .patrocinador-lightbox img {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+
+    .lightbox-cerrar {
+        top: 15px;
+        right: 15px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 27px;
+    }
+
 }

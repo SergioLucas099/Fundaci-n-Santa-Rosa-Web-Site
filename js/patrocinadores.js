@@ -1,3 +1,4 @@
+
 import {
     ref,
     onValue
@@ -6,6 +7,46 @@ import {
 import {
     database
 } from "./firebase.js";
+
+
+// =========================================
+// ELEMENTOS HTML
+// =========================================
+
+const track = document.getElementById("patrocinadoresTrack");
+
+const viewport = document.getElementById("patrocinadoresViewport");
+
+const btnAnterior = document.getElementById("patrocinadorAnterior");
+
+const btnSiguiente = document.getElementById("patrocinadorSiguiente");
+
+const lightbox = document.getElementById("patrocinadorLightbox");
+
+const imagenLightbox = document.getElementById("imagenLightbox");
+
+const cerrarLightbox = document.getElementById("cerrarLightbox");
+
+
+// =========================================
+// VALIDAR ELEMENTOS
+// =========================================
+
+if (
+    !track ||
+    !viewport ||
+    !btnAnterior ||
+    !btnSiguiente ||
+    !lightbox ||
+    !imagenLightbox ||
+    !cerrarLightbox
+) {
+    console.error(
+        "No se encontraron todos los elementos de patrocinadores."
+    );
+
+    throw new Error("Error al inicializar el slider de patrocinadores.");
+}
 
 
 // =========================================
@@ -19,6 +60,24 @@ let cantidadPatrocinadores = 0;
 let intervaloSlider = null;
 
 let moviendo = false;
+
+let pausaUsuario = false;
+
+let punteroDentro = false;
+
+let imagenAbierta = false;
+
+let inicioToqueX = 0;
+
+let desplazamientoTactil = false;
+
+let temporizadorReanudacion = null;
+
+const TIEMPO_SLIDER = 3800;
+
+const DURACION_TRANSICION = 800;
+
+const DISTANCIA_DESLIZAMIENTO = 40;
 
 
 // =========================================
@@ -37,72 +96,44 @@ const patrocinadoresRef = ref(
 
 onValue(patrocinadoresRef, (snapshot) => {
 
-    const track = document.getElementById(
-        "patrocinadoresTrack"
-    );
-
-
-    if (!track) {
-
-        console.error(
-            "No se encontró #patrocinadoresTrack"
-        );
-
-        return;
-    }
-
-
-    // Detener animación anterior
-
     detenerSlider();
-
-
-    // Limpiar contenido
 
     track.innerHTML = "";
 
+    posicionActual = 0;
+
+    cantidadPatrocinadores = 0;
+
+    moviendo = false;
+
+
+    // Limpiar estado anterior
+
+    track.style.transition = "none";
+
+    track.style.transform = "translateX(0)";
+
 
     // =========================================
-    // CREAR PATROCINADORES
+    // OBTENER DATOS DE FIREBASE
     // =========================================
+
+    const patrocinadores = [];
 
     snapshot.forEach((patrocinadorSnapshot) => {
 
         const datos = patrocinadorSnapshot.val();
 
-
-        if (!datos.Url) {
+        if (!datos || !datos.Url) {
             return;
         }
 
-
-        const contenedor = document.createElement(
-            "div"
-        );
-
-        contenedor.classList.add(
-            "patrocinador"
-        );
-
-
-        const imagen = document.createElement(
-            "img"
-        );
-
-        imagen.src = datos.Url;
-
-        imagen.alt = "Patrocinador";
-
-
-        contenedor.appendChild(imagen);
-
-        track.appendChild(contenedor);
+        patrocinadores.push(datos.Url);
 
     });
 
 
-    cantidadPatrocinadores =
-        track.children.length;
+    cantidadPatrocinadores = patrocinadores.length;
 
 
     console.log(
@@ -112,63 +143,142 @@ onValue(patrocinadoresRef, (snapshot) => {
 
 
     // =========================================
-    // SI NO HAY PATROCINADORES
+    // VALIDAR SI EXISTEN PATROCINADORES
     // =========================================
 
     if (cantidadPatrocinadores === 0) {
+
+        btnAnterior.style.display = "none";
+
+        btnSiguiente.style.display = "none";
+
         return;
+
     }
 
 
     // =========================================
-    // DUPLICAR LOS PATROCINADORES
+    // CREAR ELEMENTOS
     // =========================================
 
-    const patrocinadoresOriginales =
-        Array.from(track.children);
+    function crearPatrocinador(url) {
+
+        const contenedor = document.createElement("div");
+
+        contenedor.classList.add("patrocinador");
 
 
-    patrocinadoresOriginales.forEach(
-        (patrocinador) => {
+        const imagen = document.createElement("img");
 
-            const clon =
-                patrocinador.cloneNode(true);
+        imagen.src = url;
 
-            track.appendChild(clon);
+        imagen.alt = "Patrocinador";
+
+        imagen.loading = "lazy";
+
+
+        contenedor.appendChild(imagen);
+
+        return contenedor;
+
+    }
+
+
+    // =========================================
+    // CREAR CLONES AL INICIO
+    // =========================================
+
+    patrocinadores.forEach((url) => {
+
+        track.appendChild(
+            crearPatrocinador(url)
+        );
+
+    });
+
+
+    // =========================================
+    // AGREGAR ELEMENTOS ORIGINALES
+    // =========================================
+
+    patrocinadores.forEach((url) => {
+
+        track.appendChild(
+            crearPatrocinador(url)
+        );
+
+    });
+
+
+    // =========================================
+    // CREAR CLONES AL FINAL
+    // =========================================
+
+    patrocinadores.forEach((url) => {
+
+        track.appendChild(
+            crearPatrocinador(url)
+        );
+
+    });
+
+
+    // =========================================
+    // CONFIGURAR POSICIÓN INICIAL
+    // =========================================
+
+    posicionActual = cantidadPatrocinadores;
+
+
+    // Mostrar controles si hay varios patrocinadores
+
+    const mostrarControles = cantidadPatrocinadores > 1;
+
+    btnAnterior.style.display =
+        mostrarControles ? "flex" : "none";
+
+    btnSiguiente.style.display =
+        mostrarControles ? "flex" : "none";
+
+
+    // Esperar al cálculo del diseño
+
+    requestAnimationFrame(() => {
+
+        actualizarPosicion();
+
+        if (mostrarControles) {
+
+            iniciarSlider();
 
         }
-    );
 
-
-    // =========================================
-    // INICIAR SLIDER
-    // =========================================
-
-    posicionActual = 0;
-
-    track.style.transform =
-        "translateX(0)";
-
-
-    iniciarSlider();
+    });
 
 });
 
 
 // =========================================
-// INICIAR SLIDER
+// CALCULAR POSICIÓN
 // =========================================
 
-function iniciarSlider() {
+function actualizarPosicion() {
 
-    detenerSlider();
+    const elemento = track.children[posicionActual];
+
+    if (!elemento) return;
 
 
-    intervaloSlider = setInterval(() => {
+    // Distancia real entre el primer elemento
+    // del track y el elemento seleccionado
 
-        moverSlider();
+    const distancia =
+        elemento.getBoundingClientRect().left -
+        track.getBoundingClientRect().left;
 
-    }, 3800);
+
+    track.style.transform =
+        `translateX(-${distancia}px)`;
 
 }
 
@@ -177,93 +287,100 @@ function iniciarSlider() {
 // MOVER SLIDER
 // =========================================
 
-function moverSlider() {
+function moverSlider(direccion) {
 
-    if (moviendo) {
+    if (
+        moviendo ||
+        cantidadPatrocinadores <= 1
+    ) {
         return;
     }
-
-
-    const track =
-        document.getElementById(
-            "patrocinadoresTrack"
-        );
-
-
-    if (!track) {
-        return;
-    }
-
-
-    const patrocinador =
-        track.querySelector(
-            ".patrocinador"
-        );
-
-
-    if (!patrocinador) {
-        return;
-    }
-
-
-    const ancho =
-        patrocinador.offsetWidth;
-
-
-    posicionActual++;
 
 
     moviendo = true;
 
+    posicionActual += direccion;
+
 
     track.style.transition =
-        "transform 0.8s ease";
+        `transform ${DURACION_TRANSICION / 1000}s ease`;
 
 
-    track.style.transform =
-        `translateX(-${posicionActual * ancho}px)`;
+    actualizarPosicion();
+
+}
 
 
-    // =========================================
-    // LLEGAMOS AL PRIMER CLON
-    // =========================================
+// =========================================
+// FINALIZAR TRANSICIÓN
+// =========================================
+
+track.addEventListener("transitionend", (event) => {
+
+    if (event.propertyName !== "transform") {
+        return;
+    }
+
+
+    // Llegamos al primer clon del final
 
     if (
-        posicionActual ===
-        cantidadPatrocinadores
+        posicionActual >= cantidadPatrocinadores * 2
     ) {
 
-        setTimeout(() => {
-
-            track.style.transition =
-                "none";
-
-
-            posicionActual = 0;
-
-
-            track.style.transform =
-                "translateX(0)";
-
-
-            // Forzar actualización del navegador
-
-            track.offsetHeight;
-
-
-            moviendo = false;
-
-        }, 800);
-
-    } else {
-
-        setTimeout(() => {
-
-            moviendo = false;
-
-        }, 800);
+        posicionActual = cantidadPatrocinadores;
 
     }
+
+
+    // Llegamos al último clon del inicio
+
+    else if (
+        posicionActual < cantidadPatrocinadores
+    ) {
+
+        posicionActual =
+            cantidadPatrocinadores * 2 - 1;
+
+    }
+
+
+    // Reposicionar sin animación
+
+    track.style.transition = "none";
+
+    actualizarPosicion();
+
+
+    moviendo = false;
+
+});
+
+
+// =========================================
+// INICIAR SLIDER AUTOMÁTICO
+// =========================================
+
+function iniciarSlider() {
+
+    detenerSlider();
+
+
+    if (
+        cantidadPatrocinadores <= 1 ||
+        pausaUsuario ||
+        punteroDentro ||
+        imagenAbierta
+    ) {
+        return;
+    }
+
+
+    intervaloSlider = setInterval(() => {
+
+        moverSlider(1);
+
+    }, TIEMPO_SLIDER);
 
 }
 
@@ -276,12 +393,266 @@ function detenerSlider() {
 
     if (intervaloSlider !== null) {
 
-        clearInterval(
-            intervaloSlider
-        );
+        clearInterval(intervaloSlider);
 
         intervaloSlider = null;
 
     }
 
 }
+
+
+// =========================================
+// PAUSA TEMPORAL
+// =========================================
+
+function pausarTemporalmente() {
+
+    detenerSlider();
+
+    pausaUsuario = true;
+
+
+    clearTimeout(temporizadorReanudacion);
+
+
+    temporizadorReanudacion = setTimeout(() => {
+
+        pausaUsuario = false;
+
+        iniciarSlider();
+
+    }, 5000);
+
+}
+
+
+// =========================================
+// BOTÓN ANTERIOR
+// =========================================
+
+btnAnterior.addEventListener("click", () => {
+
+    pausarTemporalmente();
+
+    moverSlider(-1);
+
+});
+
+
+// =========================================
+// BOTÓN SIGUIENTE
+// =========================================
+
+btnSiguiente.addEventListener("click", () => {
+
+    pausarTemporalmente();
+
+    moverSlider(1);
+
+});
+
+
+// =========================================
+// PAUSA AL PASAR EL CURSOR
+// =========================================
+
+viewport.addEventListener("mouseenter", () => {
+
+    punteroDentro = true;
+
+    detenerSlider();
+
+});
+
+
+viewport.addEventListener("mouseleave", () => {
+
+    punteroDentro = false;
+
+    iniciarSlider();
+
+});
+
+
+// =========================================
+// DESPLAZAMIENTO TÁCTIL
+// =========================================
+
+viewport.addEventListener("pointerdown", (event) => {
+
+    if (event.pointerType !== "touch") {
+        return;
+    }
+
+    inicioToqueX = event.clientX;
+
+    desplazamientoTactil = false;
+
+});
+
+
+viewport.addEventListener("pointerup", (event) => {
+
+    if (event.pointerType !== "touch") {
+        return;
+    }
+
+
+    const diferencia =
+        inicioToqueX - event.clientX;
+
+
+    if (
+        Math.abs(diferencia) <
+        DISTANCIA_DESLIZAMIENTO
+    ) {
+        return;
+    }
+
+
+    desplazamientoTactil = true;
+
+    pausarTemporalmente();
+
+
+    if (diferencia > 0) {
+
+        moverSlider(1);
+
+    } else {
+
+        moverSlider(-1);
+
+    }
+
+
+    // Evitar que el gesto abra el Lightbox
+
+    setTimeout(() => {
+
+        desplazamientoTactil = false;
+
+    }, 400);
+
+});
+
+
+// =========================================
+// ABRIR IMAGEN AMPLIADA
+// =========================================
+
+track.addEventListener("click", (event) => {
+
+    if (desplazamientoTactil) {
+        return;
+    }
+
+
+    const imagen = event.target.closest("img");
+
+    if (!imagen) {
+        return;
+    }
+
+
+    detenerSlider();
+
+    pausaUsuario = true;
+
+    imagenAbierta = true;
+
+
+    imagenLightbox.src = imagen.src;
+
+    imagenLightbox.alt = imagen.alt;
+
+
+    lightbox.classList.add("activo");
+
+    document.body.style.overflow = "hidden";
+
+});
+
+
+// =========================================
+// CERRAR IMAGEN AMPLIADA
+// =========================================
+
+function cerrarImagen() {
+
+    if (!imagenAbierta) {
+        return;
+    }
+
+
+    lightbox.classList.remove("activo");
+
+
+    imagenLightbox.src = "";
+
+    imagenLightbox.alt = "";
+
+
+    document.body.style.overflow = "";
+
+
+    imagenAbierta = false;
+
+
+    pausarTemporalmente();
+
+}
+
+
+// =========================================
+// BOTÓN CERRAR
+// =========================================
+
+cerrarLightbox.addEventListener("click", cerrarImagen);
+
+
+// =========================================
+// CERRAR AL HACER CLIC FUERA
+// =========================================
+
+lightbox.addEventListener("click", (event) => {
+
+    if (event.target === lightbox) {
+
+        cerrarImagen();
+
+    }
+
+});
+
+
+// =========================================
+// CERRAR CON TECLA ESCAPE
+// =========================================
+
+document.addEventListener("keydown", (event) => {
+
+    if (
+        event.key === "Escape" &&
+        imagenAbierta
+    ) {
+
+        cerrarImagen();
+
+    }
+
+});
+
+
+// =========================================
+// LIMPIAR TEMPORIZADORES AL SALIR
+// =========================================
+
+window.addEventListener("pagehide", () => {
+
+    detenerSlider();
+
+    clearTimeout(temporizadorReanudacion);
+
+});

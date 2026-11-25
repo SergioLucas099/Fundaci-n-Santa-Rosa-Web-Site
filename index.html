@@ -223,6 +223,10 @@
 
     </section>
 
+    <section>
+
+    </section>
+
     <section class="mapa">
 
         <div class="mapa-encabezado">
@@ -336,6 +340,7 @@
 
     </section>
 
+
     <section class="patrocinadores">
 
         <div class="patrocinadores-info">
@@ -351,18 +356,40 @@
 
         </div>
 
-
         <div class="patrocinadores-slider">
 
-            <div class="patrocinadores-track" id="patrocinadoresTrack">
+            <button class="patrocinadores-btn anterior" id="patrocinadorAnterior" aria-label="Patrocinador anterior">
+                &#10094;
+            </button>
 
-                <!-- Los patrocinadores se cargarán desde Firebase -->
+            <div class="patrocinadores-viewport" id="patrocinadoresViewport">
+
+                <div class="patrocinadores-track" id="patrocinadoresTrack">
+
+                    <!-- Los patrocinadores se cargarán desde Firebase -->
+
+                </div>
 
             </div>
+
+            <button class="patrocinadores-btn siguiente" id="patrocinadorSiguiente" aria-label="Siguiente patrocinador">
+                &#10095;
+            </button>
 
         </div>
 
     </section>
+
+    <div class="patrocinador-lightbox" id="patrocinadorLightbox">
+
+        <button class="lightbox-cerrar" id="cerrarLightbox" aria-label="Cerrar imagen">
+            &times;
+        </button>
+
+        <img id="imagenLightbox" src="" alt="Patrocinador ampliado">
+
+    </div>
+
 
     <section class="nuestros-aliados" id="nuestros_beneficiados">
 
