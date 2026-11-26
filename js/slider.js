@@ -56,6 +56,7 @@ onValue(imagesSliderRef, (snapshot) => {
             <img
                 src="${datos.Url}"
                 alt="${datos.Encabezado}"
+                style="filter: brightness(0.6) contrast(1.0);"
             >
 
             <div class="text-content">
@@ -107,3 +108,49 @@ onValue(imagesSliderRef, (snapshot) => {
     }
 
 });
+
+
+window.iniciarSwiper = function () {
+
+    // Destruir instancias anteriores si existen
+    if (window.bgSliderInstance) {
+        window.bgSliderInstance.destroy(true, true);
+    }
+
+    if (window.thumbsSliderInstance) {
+        window.thumbsSliderInstance.destroy(true, true);
+    }
+
+    // SLIDER DE MINIATURAS
+    window.thumbsSliderInstance = new Swiper(
+        ".bg-slider-thumbs",
+        {
+            spaceBetween: 10,
+            slidesPerView: 3,
+            watchSlidesProgress: true,
+            freeMode: true,
+        }
+    );
+
+
+    // SLIDER PRINCIPAL
+    window.bgSliderInstance = new Swiper(
+        ".bg-slider",
+        {
+            spaceBetween: 0,
+            effect: "fade",
+            speed: 1000,
+
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+
+            thumbs: {
+                swiper: window.thumbsSliderInstance,
+            },
+
+        }
+    );
+
+};

@@ -783,7 +783,7 @@ header.sticky~.media-icons a:hover {
 
 .seccion-fundacion {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 40px;
 
@@ -3810,6 +3810,145 @@ h6,
         height: 38px;
 
         font-size: 27px;
+    }
+
+}
+
+
+/* CONTENEDOR DE ESTADISTICAS */
+
+.estadisticas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 30px;
+    padding: 35px 20px;
+    box-sizing: border-box;
+}
+
+
+/* ELEMENTOS INDIVIDUALES */
+
+.estadistica-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* IMAGENES */
+
+.estadistica-icono {
+    width: 175px;
+    height: 145px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+
+/* TITULOS */
+
+.estadistica-item h3 {
+    color: #0b315c;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.05;
+    margin: 0;
+}
+
+
+/* LINEA VERDE */
+
+.estadistica-linea {
+    width: 130px;
+    height: 5px;
+    background-color: #00BE36;
+    border-radius: 5px;
+    margin-top: 7px;
+}
+
+
+/* NUMEROS */
+
+.estadistica-numero {
+    color: #0b315c;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 14px 0 0 0;
+}
+
+
+/* TABLETAS */
+
+@media (max-width: 768px) {
+
+    .estadisticas {
+        gap: 15px;
+        padding: 30px 10px;
+    }
+
+    .estadistica-icono {
+        width: 130px;
+        height: 115px;
+    }
+
+    .estadistica-item h3 {
+        font-size: 19px;
+    }
+
+    .estadistica-linea {
+        width: 100px;
+    }
+
+    .estadistica-numero {
+        font-size: 40px;
+    }
+
+}
+
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 35px 15px;
+    }
+
+    .estadistica-icono {
+        width: 150px;
+        height: 125px;
+    }
+
+    .estadistica-item h3 {
+        font-size: 22px;
+    }
+
+    .estadistica-linea {
+        width: 120px;
+    }
+
+    .estadistica-numero {
+        font-size: 45px;
+    }
+
+}
+
+/* TITULO DEL SLIDER EN COMPUTADORES */
+@media (min-width: 769px) {
+
+    .bg-slider .text-content .title {
+        font-size: 2.6rem !important;
     }
 
 }
